@@ -46,12 +46,17 @@
 	}
 	if (jQuery.browser.mobile) {
 		$('body').addClass('mobilechat');
-		$('.Rail, .Write img').hide();
+		$('.Rail, .Write img, .private, #PrivateChatList').hide();
 $('body').css("overflow", "hidden");
 $('.Chat, #Write').css("width","100%");
 $('.WikiaPage, .ChatHeader').css({"margin-left":"-1%","padding-left":"1%","padding-right":"1%","margin-right":"-1%"});
 $('.Write').prepend('<button style="position:absolute;left:1%;bottom:4%;" id="showusers">U</button>');
 $('.Chat, #Write').css("right", "0", "important");
+$('#showusers').click(function() {
+  $('.Rail').toggle('slow', function() {
+    $(this).children().css({"position":"absolute", "width":"100%", "height":"100%", "float":"left"}); $('li.you').css('background', 'transparent');
+  });
+});
 	}
 	// Here comes the actions
 	config.Actions = function () {
