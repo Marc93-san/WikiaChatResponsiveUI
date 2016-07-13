@@ -50,7 +50,7 @@
 $('body').css("overflow", "hidden");
 $('.Chat, #Write').css("width","100%");
 $('.WikiaPage, .ChatHeader').css({"margin-left":"-1%","padding-left":"1%","padding-right":"1%","margin-right":"-1%"});
-$('.Write').prepend('<button style="position:absolute;left:1%;bottom:4%;" onclick="mostrarUsers()">U</button>');
+$('.Write').prepend('<button style="position:absolute;left:1%;bottom:4%;" id="showusers">U</button>');
 $('.Chat, #Write').css("right", "0", "important");
 	}
 	// Here comes the actions
