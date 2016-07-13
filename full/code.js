@@ -43,6 +43,9 @@
 		}
 		return lang[name];
 	}
+	if (jQuery.browser.mobile == 'true') {
+		$('body').addClass('mobilechat');
+	}
 	// Here comes the actions
 	config.Actions = function () {
 	  // improveMobileUI
