@@ -16,34 +16,11 @@
 	// one language without causing the script to fall back to English for
 	// everything that wasn't overridden)
 	config = $.extend(true, {
-	  improveMobileUI: true,
-	  improveSiteUI: false,
 	  importResponsiveJS: true,
 		importResponsiveCSS: true,
-		customtheme: 'default',
-		userLang: true,
-		// English
-		'en': {
-			membersbtn: "Chat members",
-			infover: "ver.",
-			madeby: "Made by"
-		},
-		//Español
-		'es': {
-			membersbtn: "Miembros del chat",
-			infover: "versión",
-			madeby: "Hecho por"
-		}
 	}, config, {
 		version: '1.0'
 	});
-	function msg(name) {
-		var lang = config.userLang ;
-		if (typeof lang !== "string") {
-			lang = config[mw.config.get('wgContentLanguage')] || config.en;
-		}
-		return lang[name];
-	}
 	if (jQuery.browser.mobile) {
 		$('body').addClass('mobilechat');
 		$('.Rail, .Write img, .private, #PrivateChatList').hide();
@@ -60,14 +37,6 @@ $('#showusers').click(function() {
 	}
 	// Here comes the actions
 	config.Actions = function () {
-	  // improveMobileUI
-	if (config.improveMobileUI & jQuery.browser.mobile) {
-	console.log('improveMobileUI enabled');
-	}
-		// improveSiteUI
-		if (config.improveSiteUI) {
-	console.log('improveSiteUI enabled')
-	}
 	// importResponsiveJS
 		if (config.importResponsiveJS) {
 		mw.loader.load( '/wiki/index.php?title=MediaWiki:ChatResponsive.js&action=raw&ctype=text/javascript' );
