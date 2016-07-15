@@ -16,8 +16,8 @@
 	// one language without causing the script to fall back to English for
 	// everything that wasn't overridden)
 	config = $.extend(true, {
-	  importResponsiveJS: true,
-		importResponsiveCSS: true,
+	  importResponsiveJS: false,
+		importResponsiveCSS: false,
 	}, config, {
 		version: '1.0'
 	});
